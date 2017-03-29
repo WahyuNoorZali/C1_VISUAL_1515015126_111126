@@ -1,6 +1,3 @@
-package Posttest5;
-
-
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -32,7 +29,7 @@ public class TabelKegiatan extends javax.swing.JFrame {
         model = new DefaultTableModel();
         model.addColumn("NIM");
         model.addColumn("NAMA");
-        model.addColumn("ANGKATAN");
+        model.addColumn("KOTA ASAL");
         jTable1.setModel(model);
     }
 
@@ -300,30 +297,23 @@ public class TabelKegiatan extends javax.swing.JFrame {
     }//GEN-LAST:event_hapusActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-        if(nama.getText().length()==0 || notelp.getText().length()==0) {
-            JOptionPane.showMessageDialog(null, "Nama dan Nomor Telepon Harus Di isi !");
-        }
-        else{
         int baris = 0;
         // TODO add your handling code here:
         jTable1.setValueAt(nama.getText(), baris, 0);
         jTable1.setValueAt(notelp.getText(), baris, 1);
-        jTable1.setValueAt(jComboBox1.getSelectedItem(), baris, 2);}
+        jTable1.setValueAt(jComboBox1.getSelectedItem(), baris, 2);
     }//GEN-LAST:event_updateActionPerformed
 
     private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
         // TODO add your handling code here:
-        if(nama.getText().length()==0 || notelp.getText().length()==0) {
-            JOptionPane.showMessageDialog(null, "Nama dan Nomor Telepon Harus Di isi !");
-        }
-        else{
+
         Object[] data = new Object[3]; //sesuaikan dengan jumlah kolom
         data[0] = nama.getText();
         data[1] = notelp.getText();
         data[2] = jComboBox1.getSelectedItem().toString();
 
         model.addRow(data);
-        }
+        
     }//GEN-LAST:event_tambahActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
